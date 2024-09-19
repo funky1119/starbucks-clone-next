@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function Navigation() {
   return (
-    <header>
-      <div className={`inner ${styles.header}`}>
+    <header className={styles.header}>
+      <div className={`inner ${styles.inner}`}>
         {/* Logo */}
         <Link href={"/"} className={styles.logo}>
           <Image
@@ -31,6 +31,9 @@ export default function Navigation() {
             <li>
               <Link href={"#"}>Find a Store</Link>
             </li>
+            <li>
+              <span className="material-symbols-outlined">search</span>
+            </li>
           </ul>
         </div>
         {/* Main menu */}
@@ -39,9 +42,7 @@ export default function Navigation() {
           <li className={styles.item}>
             <div className={styles.item__name}>COFFEE</div>
             <div className={styles.item__contents}>
-              <div className={styles.contents__menu}>
-                <ul className="inner"></ul>
-              </div>
+              <div className={styles.contents__menu}></div>
             </div>
           </li>
           <li className={styles.item}>
@@ -54,7 +55,7 @@ export default function Navigation() {
             <div className={styles.item__name}>RESPONSIBILITY</div>
           </li>
           <li className={styles.item}>
-            <div className={styles.item__name}>MY STARBUCKS REWARDS</div>
+            <div className={styles.item__name}>{"MY STARBUCKS REWARDS"}</div>
           </li>
           <li className={styles.item}>
             <div className={styles.item__name}>{`WHAT'S NEW`}</div>

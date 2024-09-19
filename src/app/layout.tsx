@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import Navigation from "./components/navigation";
 import "./globals.scss";
+import { IconDescriptor } from "next/dist/lib/metadata/types/metadata-types";
+export interface CustomIconDescriptorType extends IconDescriptor {
+  precedence?: string;
+}
+const icon: CustomIconDescriptorType = {
+  rel: "stylesheet",
+  url: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined",
+  precedence: "default",
+};
 
 export const metadata: Metadata = {
   title: "Starbucks Coffee Korea",
@@ -25,6 +34,9 @@ export const metadata: Metadata = {
     images: {
       url: "/images/starbucks_seo.jpg",
     },
+  },
+  icons: {
+    other: icon,
   },
 };
 
