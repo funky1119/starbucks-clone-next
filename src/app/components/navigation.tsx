@@ -9,7 +9,7 @@ import classNames from "classnames";
 export default function Navigation() {
   const [searchFocus, setSearchFocus] = useState(false);
   return (
-    <header className={styles.header}>
+    <div className={styles.header}>
       <div className={`inner ${styles.inner}`}>
         {/* Logo */}
         <Link href={"/"} className={styles.logo}>
@@ -551,6 +551,6 @@ export default function Navigation() {
           </li>
         </ul>
       </div>
-    </header>
+    </div>
   );
 }
