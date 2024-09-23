@@ -54,3 +54,4 @@ export const metadata: Metadata = {
    position: relative 가 있어야 해당 태그 안에 배치가 된다.
 2. position: absolute 일 때, top:0, bottom: 0, margin: auto 0; 으로 하면 수평 정렬이 된다. (단, 높이 값 존재할 경우에만)
 3. position: absolute 일 때, left:0, right: 0, margin: 0 auto; 으로 하면 수평 정렬이 된다. (단, 넓이 값 존재할 경우에만)
+4. ㄴ
