@@ -10,6 +10,7 @@
     "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.1",
     "classnames": "^2.5.1",
     "gsap": "^3.12.5",
     "lodash": "^4.17.21",

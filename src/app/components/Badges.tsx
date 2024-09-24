@@ -1,11 +1,22 @@
+"use client";
+
 import styles from "./badges.module.scss";
 import Image from "next/image";
 import _ from "lodash";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(useGSAP);
 
 export default function Badges() {
-  const dd = () => {
-    const badgeEl = document.querySelector("header .badges");
+  const badges = useRef(null);
+  useGSAP(() => {
+    badges.current, { rotation: "-=360", duration: 3 }, { scrop: badges };
+  });
+
+  useEffect(() => {
+    const badgeEl = document.querySelector(".header .badges");
     const toTopEl = document.querySelector("#to-top");
 
     window.addEventListener(
@@ -35,10 +46,10 @@ export default function Badges() {
         }
       }, 300)
     );
-  };
+  }, []);
 
   return (
-    <div className={styles.badges}>
+    <div ref={badges} className={styles.badges}>
       <div className={styles.badge}>
         <Image
           src="/images/badge1.jpg"

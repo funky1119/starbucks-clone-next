@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import styles from "./navigation.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
+import Badges from "./Badges";
 
 export default function Navigation() {
   const [searchFocus, setSearchFocus] = useState(false);
@@ -551,6 +552,7 @@ export default function Navigation() {
           </li>
         </ul>
       </div>
+      <Badges />
     </div>
   );
 }

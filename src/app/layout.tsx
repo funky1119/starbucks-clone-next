@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Navigation from "./components/navigation";
 import "./globals.scss";
 import { IconDescriptor } from "next/dist/lib/metadata/types/metadata-types";
-import Badges from "./components/Badges";
 export interface CustomIconDescriptorType extends IconDescriptor {
   precedence?: string;
 }
@@ -51,7 +50,6 @@ export default function RootLayout({
       <body>
         <header>
           <Navigation />
-          <Badges />
         </header>
         {children}
       </body>
