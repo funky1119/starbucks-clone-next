@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./navigation.module.scss";
 import Link from "next/link";
 import classNames from "classnames";
@@ -9,6 +9,8 @@ import Badges from "./Badges";
 
 export default function Navigation() {
   const [searchFocus, setSearchFocus] = useState(false);
+  const searchRef = useRef<HTMLInputElement>(null);
+
   return (
     <div className={styles.header}>
       <div className={`inner ${styles.inner}`}>
@@ -31,7 +33,7 @@ export default function Navigation() {
               <Link href={"#"}>My Starbucks</Link>
             </li>
             <li>
-              <Link href={"#"}>Customer Service & ideas</Link>
+              <Link href={"#"}>Customer Services & Ideas</Link>
             </li>
             <li>
               <Link href={"#"}>Find a Store</Link>
@@ -40,10 +42,15 @@ export default function Navigation() {
           </ul>
           <div
             className={classNames(styles.search, searchFocus && styles.focused)}
+            onClick={() => searchRef.current?.focus()}
             onFocus={() => setSearchFocus(true)}
             onBlur={() => setSearchFocus(false)}
           >
-            <input type="text" placeholder={searchFocus ? "통합검색" : ""} />
+            <input
+              ref={searchRef}
+              type="text"
+              placeholder={searchFocus ? "통합검색" : ""}
+            />
             <div
               className={classNames(
                 "material-symbols-outlined",
